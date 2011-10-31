@@ -1,0 +1,187 @@
+show_progress(0.1, 0);
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("************************************************"); 
+ui_print("*                  Welcome to                  *");
+ui_print("*                StormDroid 1.2                *");
+ui_print("*                  *NIGHTLY*                   *");
+ui_print("*               LG Ally Edition                *");
+ui_print("*                Developed by                  *");
+ui_print("*               cr5315   j2cool                *");
+ui_print("*                   remicks                    *");
+ui_print("*                Kernel by D2A                 *");
+ui_print("*                                              *");
+ui_print("*               stormdroid.us                  *");
+ui_print("************************************************");
+ui_print("");
+ui_print("************************************************");
+ui_print("October 25 2011");
+ui_print("*BE ADVISED");
+ui_print("Nightlies may be untested");
+ui_print("FLASH AT YOUR OWN RISK");
+ui_print("in case of failure, simply wipe");
+ui_print("And restore to 1.1 stable.");
+ui_print("************************************************");
+ui_print("");
+ui_print("BEGIN ROM FLASH PREPARATION");    
+ui_print("");
+ui_print("************************************************");
+ui_print("Mounting system and data");
+ui_print("************************************************");
+format("MTD", "system");
+mount("MTD", "system", "/system");
+format("MTD", "userdata");
+mount("MTD", "userdata", "/data");
+ui_print("************************************************");
+ui_print("BEGIN PREPARING FILES");
+ui_print("************************************************");
+ui_print("");
+ui_print("Extracting data");
+package_extract_dir("data", "/data");
+set_perm_recursive(1000, 1000, 0771, 0644, "/data/app");
+ui_print("************************************************");
+ui_print("Extracting system");
+ui_print("************************************************");
+package_extract_dir("system", "/system");
+ui_print("symlinking toolbox");
+symlink("/system/bin/su", "/system/xbin/su");
+symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
+        "/system/bin/chown", "/system/bin/cmp", "/system/bin/date",
+        "/system/bin/dd", "/system/bin/df", "/system/bin/dmesg",
+        "/system/bin/getevent", "/system/bin/getprop", "/system/bin/hd",
+        "/system/bin/id", "/system/bin/ifconfig", "/system/bin/iftop",
+        "/system/bin/insmod", "/system/bin/ioctl", "/system/bin/ionice",
+        "/system/bin/kill", "/system/bin/ln", "/system/bin/log",
+        "/system/bin/ls", "/system/bin/lsmod", "/system/bin/mkdir",
+        "/system/bin/mount", "/system/bin/mv", "/system/bin/nandread",
+        "/system/bin/netstat", "/system/bin/newfs_msdos", "/system/bin/notify",
+        "/system/bin/printenv", "/system/bin/ps", "/system/bin/reboot",
+        "/system/bin/renice", "/system/bin/rm", "/system/bin/rmdir",
+        "/system/bin/rmmod", "/system/bin/route", "/system/bin/schedtop",
+        "/system/bin/sendevent", "/system/bin/setconsole",
+        "/system/bin/setprop", "/system/bin/sleep", "/system/bin/smd",
+        "/system/bin/start", "/system/bin/stop", "/system/bin/sync",
+        "/system/bin/top", "/system/bin/umount", "/system/bin/vmstat",
+        "/system/bin/watchprops", "/system/bin/wipe");
+ui_print("************************************************");
+ui_print("Cooking bacon...");
+ui_print("************************************************");
+ui_print("BEGIN SETTING PERMISSIONS");
+ui_print("************************************************");
+ui_print("");
+set_perm_recursive(0, 0, 0755, 0644, "/system");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
+set_perm(0, 3003, 02750, "/system/bin/netcfg");
+set_perm(0, 3004, 02755, "/system/bin/ping");
+set_perm(0, 2000, 06750, "/system/bin/run-as");
+set_perm_recursive(1002, 1002, 0755, 0440, "/system/etc/bluetooth");
+set_perm(0, 0, 0755, "/system/etc/bluetooth");
+set_perm(1000, 1000, 0640, "/system/etc/bluetooth/auto_pairing.conf");
+set_perm(3002, 3002, 0444, "/system/etc/bluetooth/blacklist.conf");
+set_perm(1002, 1002, 0440, "/system/etc/dbus.conf");
+set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
+set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
+run_program("/system/bin/busybox", "--install", "/system/bin");
+set_perm(0, 0, 04755, "/system/bin/bash");
+symlink("/system/bin/bash", "/system/bin/sh");
+set_perm(0, 0, 04755, "/system/bin/sysrw");
+set_perm(0, 0, 04755, "/system/bin/sysro");
+set_perm(0, 0, 04755, "/system/bin/nano");
+set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
+show_progress(0.1, 10);
+show_progress(0.2, 0);
+ui_print("************************************************");
+ui_print("BEGIN FLASHING IMAGES");
+ui_print("************************************************");
+ui_print("");
+ui_print("************************************************");
+ui_print("Flashing le boot.img");
+ui_print("************************************************");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "boot"),
+       delete("/tmp/boot.img"));
+ui_print("************************************************");
+ui_print("Flashing Recovery");
+ui_print("************************************************");
+assert(package_extract_file("recovery.img", "/tmp/recovery.img"),
+       write_raw_image("/tmp/recovery.img", "recovery"),
+       delete("/tmp/recovery.img"));
+ui_print("Flashing le splash.img");
+format ("MTD", "splash");
+assert(package_extract_file("splash.img", "/tmp/splash.img"),
+       write_raw_image("/tmp/splash.img", "splash"),
+       delete("/tmp/splash.img"));
+show_progress(0.2, 10);
+ui_print("************************************************");
+ui_print("Attempting su fix");
+ui_print("************************************************");
+set_perm(0, 0, 6755, "/system/bin/su");
+symlink("/system/bin/su", "/system/xbin/su");
+unmount("/system");
+unmount("/data");
+ui_print("Bacon's done!");
+ui_print("And so is your ROM flash!");
+ui_print("Thanks for choosing");
+ui_print("   _____ _                        ");
+ui_print("  / ____| |                       ");
+ui_print(" | (___ | |_  ___  _ __ _ __ ___  ");
+ui_print("  \___ \| __|/ _ \| '__| '_ ` _ \ ");
+ui_print("  ____) | |_| (_) | |  | | | | | |");
+ui_print(" |_____/ \__|\___/|_|  |_| |_| |_|");
+ui_print("     |  __ \          (_)   | |   ");
+ui_print("     | |  | |_ __ ___  _  __| |   ");
+ui_print("     | |  | | '__/ _ \| |/ _` |   ");
+ui_print("     | |__| | | | (_) | | (_| |   ");
+ui_print("     |_____/|_|  \___/|_|\__,_|   ");
+ui_print("        The Storm is Coming       ");
+ui_print("     twitter.com/StormDroidROM    ");
+ui_print("");
+ui_print("     This ROM is Bacon-approved   ");
+ui_print("           by Goonies.            ");
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("The cake is a lie.");
+
+                                                           

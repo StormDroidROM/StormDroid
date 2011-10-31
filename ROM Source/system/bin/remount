@@ -1,0 +1,39 @@
+#!/system/bin/sh
+#
+# Remount /system partition
+
+case "$1" in
+ro)
+echo "Setting /system to RO (read only)"
+mount -o ro,remount -t yaffs2 /dev/block/mtdblock3 /system
+echo ""
+echo "Current status of /system mount:"
+mount |grep "/system type"
+echo ""
+;;
+rw)
+echo "Setting /system to RW (read write)"
+mount -o rw,remount -t yaffs2 /dev/block/mtdblock3 /system
+echo ""
+echo "Current status of /system mount:"
+mount |grep "/system type"
+echo ""
+;;
+status)
+echo ""
+echo "Current status of /system mount:"
+mount |grep "/system type"
+echo ""
+;;
+*)
+echo "Valid input format:"
+echo " remount [ro|rw|status]"
+echo " ro = read only (default)"
+echo " rw = read write (to make modifications)"
+echo " status = current mount mode"
+echo ""
+echo "Current status of /system mount:"
+mount |grep "/system type"
+echo ""
+exit 1
+esac

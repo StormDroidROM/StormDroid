@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+	<parameter db="android_metadata">en_US</parameter>
+	
+	<parameter db="secure" name="bluetooth_on">0</parameter>
+	<parameter db="secure" name="data_roaming">1</parameter>
+	<parameter db="secure" name="install_non_market_apps">1</parameter>
+	<parameter db="secure" name="location_providers_allowed"></parameter>
+	<parameter db="secure" name="assisted_gps_enabled">1</parameter>
+	<parameter db="secure" name="network_preference">1</parameter>
+	<parameter db="secure" name="usb_mass_storage_enabled">1</parameter>
+	<parameter db="secure" name="wifi_on">0</parameter>
+	<parameter db="secure" name="wifi_networks_available_notification_on">1</parameter>
+	<parameter db="secure" name="preferred_network_mode">4</parameter>
+	<parameter db="secure" name="cdma_cell_broadcast_sms">1</parameter>
+	<parameter db="secure" name="preferred_cdma_subscription">1</parameter>
+	<parameter db="secure" name="mock_location">0</parameter>
+	<parameter db="secure" name="backup_transport"></parameter>
+	<parameter db="secure" name="enabled_input_methods">com.swype.android.inputmethod/.SwypeInputMethod:com.android.inputmethod.latin/.LatinIME</parameter>	
+	<parameter db="secure" name="default_input_method">com.swype.android.inputmethod/.SwypeInputMethod</parameter>
+	<parameter db="secure" name="backup_enabled">0</parameter>
+	<parameter db="secure" name="device_provisioned">1</parameter>
+	
+	<parameter db="system" name="volume_music">11</parameter>
+	<parameter db="system" name="volume_system">7</parameter>
+	<parameter db="system" name="volume_voice">4</parameter>
+	<parameter db="system" name="volume_alarm">6</parameter>
+	<parameter db="system" name="volume_notification">5</parameter>
+	<parameter db="system" name="mode_ringer">2</parameter>
+	<parameter db="system" name="vibrate_on">6</parameter>
+	<parameter db="system" name="mode_ringer_streams_affected">166</parameter>
+	<parameter db="system" name="mute_streams_affected">46</parameter>
+	<parameter db="system" name="dim_screen">1</parameter>
+	<parameter db="system" name="socket_data_call_enable">1</parameter>
+	<parameter db="system" name="stay_on_while_plugged_in">0</parameter>
+	<parameter db="system" name="screen_off_timeout">30000</parameter>
+	<parameter db="system" name="emergency_tone">0</parameter>
+	<parameter db="system" name="call_auto_retry">0</parameter>
+	<parameter db="system" name="dtmf_tone_type">0</parameter>
+	<parameter db="system" name="hearing_aid">0</parameter>
+	<parameter db="system" name="tty_mode">0</parameter>
+	<parameter db="system" name="airplane_mode_on">0</parameter>
+	<parameter db="system" name="airplane_mode_radios">cell,bluetooth,wifi</parameter>
+	<parameter db="system" name="airplane_mode_toggleable_radios">wifi</parameter>
+	<parameter db="system" name="auto_time">1</parameter>
+	<parameter db="system" name="screen_brightness">102</parameter>
+	<parameter db="system" name="screen_brightness_mode">0</parameter>
+	<parameter db="system" name="window_animation_scale">1.0</parameter>
+	<parameter db="system" name="transition_animation_scale">1.0</parameter>
+	<parameter db="system" name="accelerometer_rotation">1</parameter>
+	<parameter db="system" name="haptic_feedback_enabled">1</parameter>
+	<parameter db="system" name="notification_light_pulse">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_bpp_service">0</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_dg_service">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_dun">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_ftp">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_opp_service">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_pbs">1</parameter>
+	<parameter db="system" name="bt_svcst_bluetooth_sap">0</parameter>
+	<parameter db="system" name="bt_svcst_init">1</parameter>		
+	<parameter db="system" name="volume_ring">5</parameter>
+	<parameter db="system" name="next_alarm_formatted"></parameter>
+	
+</parameters>
