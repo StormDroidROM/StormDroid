@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+# Move dalvik-cache to /cache/ to free up tons of space
+
+if [ ! -d /cache/dalvik-cache ]
+then
+mkdir /cache/dalvik-cache
+fi
+mount -o bind /cache/dalvik-cache/ /data/dalvik-cache
+

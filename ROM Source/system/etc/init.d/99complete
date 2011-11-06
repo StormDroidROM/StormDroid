@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+# Let's remount the file system so we can continue booting
+
+sync;
+setprop cm.filesystem.ready 1;
+setprop dc.filesystem.ready 1;

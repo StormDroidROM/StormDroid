@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+# Adjust the out of memory thresholds to a better set of values
+
+echo "2048,4096,9216,14080,16640,19200" > /sys/module/lowmemorykiller/parameters/minfree
+
