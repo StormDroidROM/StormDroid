@@ -55,7 +55,7 @@ ui_print("*               stormdroid.us                  *");
 ui_print("************************************************");
 ui_print("");
 ui_print("************************************************");
-ui_print("November 5, 2011");
+ui_print("November 8, 2011");
 ui_print("Compiled by J2");
 ui_print("*BE ADVISED");
 ui_print("Nightlies may be untested");
@@ -153,9 +153,6 @@ assert(package_extract_file("splash.img", "/tmp/splash.img"),
        write_raw_image("/tmp/splash.img", "splash"),
        delete("/tmp/splash.img"));
 show_progress(0.2, 10);
-ui_print("************************************************");
-ui_print("Attempting su fix");
-ui_print("************************************************");
 set_perm(0, 0, 6755, "/system/bin/su");
 symlink("/system/bin/su", "/system/xbin/su");
 unmount("/system");
