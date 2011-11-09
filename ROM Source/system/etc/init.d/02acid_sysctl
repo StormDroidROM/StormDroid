@@ -1,0 +1,6 @@
+#!/system/bin/sh
+# sysctl.conf
+# Edited by dsexton702
+# Team Acid
+sysctl -p
+

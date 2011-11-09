@@ -1,8 +1,0 @@
-#!/system/bin/sh
-
-# Speed up your microSD card
-
-echo "vr" > /sys/block/mmcblk0/queue/scheduler;
-echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb;
-
-
